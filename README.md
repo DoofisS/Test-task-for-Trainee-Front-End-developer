@@ -8,7 +8,7 @@ git clone https://github.com/DoofisS/Test-task-for-Trainee-Front-End-developer
 
 ## Install dependencies
 
-cd [Project Name]
+cd [Project Folder]
 
 npm install
 
