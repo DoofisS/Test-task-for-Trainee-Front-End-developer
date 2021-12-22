@@ -20,7 +20,8 @@ const NameFilter = (props) => {
     <Row>
       <Col span={6}>
         <Input.Search
-          placeholder="input search text"
+          type="text"
+          placeholder="Type Name"
           allowClear
           enterButton="Search"
           size="large"

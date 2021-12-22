@@ -1,7 +1,7 @@
 import React from "react";
 import "antd/dist/antd.css";
 import "../index.css";
-import { Table } from "antd";
+import { Table, Spin } from "antd";
 import NameFilter from "../components/NameFilter";
 import { useState, useEffect } from "react";
 
@@ -67,13 +67,25 @@ const FullTable = () => {
 
   return (
     <>
-      <NameFilter offset={4} filteredData={filteredData} setData={setData} />
-      <Table
-        columns={columns}
-        dataSource={data}
-        onChange={onChange}
-        pagination={false}
-      />
+      {filteredData.length === 0 && (
+        <Spin style={{ textAlign: "center", marginLeft: "50%" }} />
+      )}
+      {filteredData.length > 0 && (
+        <>
+          <NameFilter
+            offset={4}
+            filteredData={filteredData}
+            setData={setData}
+          />
+          <Table
+            style={{ marginTop: "25px" }}
+            columns={columns}
+            dataSource={data}
+            onChange={onChange}
+            pagination={false}
+          ></Table>
+        </>
+      )}
     </>
   );
 };
